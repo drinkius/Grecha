@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,26 +13,8 @@
 		CE5B82FE254D6E0D0015373E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5B82FC254D6E0D0015373E /* Main.storyboard */; };
 		CE5B8300254D6E100015373E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5B82FF254D6E100015373E /* Assets.xcassets */; };
 		CE5B8303254D6E100015373E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5B8301254D6E100015373E /* LaunchScreen.storyboard */; };
-		CE5B830E254D6E100015373E /* GrechaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B830D254D6E100015373E /* GrechaTests.swift */; };
-		CE5B8319254D6E100015373E /* GrechaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B8318254D6E100015373E /* GrechaUITests.swift */; };
+		CE5B832F254D76300015373E /* TeleTools in Frameworks */ = {isa = PBXBuildFile; productRef = CE5B832E254D76300015373E /* TeleTools */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CE5B830A254D6E100015373E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE5B82EB254D6E0D0015373E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE5B82F2254D6E0D0015373E;
-			remoteInfo = Grecha;
-		};
-		CE5B8315254D6E100015373E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE5B82EB254D6E0D0015373E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE5B82F2254D6E0D0015373E;
-			remoteInfo = Grecha;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CE5B82F3254D6E0D0015373E /* Grecha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grecha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,12 +25,6 @@
 		CE5B82FF254D6E100015373E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5B8302254D6E100015373E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5B8304254D6E100015373E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE5B8309254D6E100015373E /* GrechaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrechaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5B830D254D6E100015373E /* GrechaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrechaTests.swift; sourceTree = "<group>"; };
-		CE5B830F254D6E100015373E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE5B8314254D6E100015373E /* GrechaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrechaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5B8318254D6E100015373E /* GrechaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrechaUITests.swift; sourceTree = "<group>"; };
-		CE5B831A254D6E100015373E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,20 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE5B8306254D6E100015373E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE5B8311254D6E100015373E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CE5B832F254D76300015373E /* TeleTools in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				CE5B82F5254D6E0D0015373E /* Grecha */,
-				CE5B830C254D6E100015373E /* GrechaTests */,
-				CE5B8317254D6E100015373E /* GrechaUITests */,
 				CE5B82F4254D6E0D0015373E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				CE5B82F3254D6E0D0015373E /* Grecha.app */,
-				CE5B8309254D6E100015373E /* GrechaTests.xctest */,
-				CE5B8314254D6E100015373E /* GrechaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,24 +69,6 @@
 			path = Grecha;
 			sourceTree = "<group>";
 		};
-		CE5B830C254D6E100015373E /* GrechaTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE5B830D254D6E100015373E /* GrechaTests.swift */,
-				CE5B830F254D6E100015373E /* Info.plist */,
-			);
-			path = GrechaTests;
-			sourceTree = "<group>";
-		};
-		CE5B8317254D6E100015373E /* GrechaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CE5B8318254D6E100015373E /* GrechaUITests.swift */,
-				CE5B831A254D6E100015373E /* Info.plist */,
-			);
-			path = GrechaUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,45 +85,12 @@
 			dependencies = (
 			);
 			name = Grecha;
+			packageProductDependencies = (
+				CE5B832E254D76300015373E /* TeleTools */,
+			);
 			productName = Grecha;
 			productReference = CE5B82F3254D6E0D0015373E /* Grecha.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CE5B8308254D6E100015373E /* GrechaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE5B8320254D6E100015373E /* Build configuration list for PBXNativeTarget "GrechaTests" */;
-			buildPhases = (
-				CE5B8305254D6E100015373E /* Sources */,
-				CE5B8306254D6E100015373E /* Frameworks */,
-				CE5B8307254D6E100015373E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE5B830B254D6E100015373E /* PBXTargetDependency */,
-			);
-			name = GrechaTests;
-			productName = GrechaTests;
-			productReference = CE5B8309254D6E100015373E /* GrechaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CE5B8313254D6E100015373E /* GrechaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE5B8323254D6E100015373E /* Build configuration list for PBXNativeTarget "GrechaUITests" */;
-			buildPhases = (
-				CE5B8310254D6E100015373E /* Sources */,
-				CE5B8311254D6E100015373E /* Frameworks */,
-				CE5B8312254D6E100015373E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE5B8316254D6E100015373E /* PBXTargetDependency */,
-			);
-			name = GrechaUITests;
-			productName = GrechaUITests;
-			productReference = CE5B8314254D6E100015373E /* GrechaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -196,14 +104,6 @@
 					CE5B82F2254D6E0D0015373E = {
 						CreatedOnToolsVersion = 12.1;
 					};
-					CE5B8308254D6E100015373E = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = CE5B82F2254D6E0D0015373E;
-					};
-					CE5B8313254D6E100015373E = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = CE5B82F2254D6E0D0015373E;
-					};
 				};
 			};
 			buildConfigurationList = CE5B82EE254D6E0D0015373E /* Build configuration list for PBXProject "Grecha" */;
@@ -215,13 +115,14 @@
 				Base,
 			);
 			mainGroup = CE5B82EA254D6E0D0015373E;
+			packageReferences = (
+				CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */,
+			);
 			productRefGroup = CE5B82F4254D6E0D0015373E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CE5B82F2254D6E0D0015373E /* Grecha */,
-				CE5B8308254D6E100015373E /* GrechaTests */,
-				CE5B8313254D6E100015373E /* GrechaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,20 +135,6 @@
 				CE5B8303254D6E100015373E /* LaunchScreen.storyboard in Resources */,
 				CE5B8300254D6E100015373E /* Assets.xcassets in Resources */,
 				CE5B82FE254D6E0D0015373E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE5B8307254D6E100015373E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE5B8312254D6E100015373E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,36 +151,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE5B8305254D6E100015373E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE5B830E254D6E100015373E /* GrechaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE5B8310254D6E100015373E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE5B8319254D6E100015373E /* GrechaUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CE5B830B254D6E100015373E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE5B82F2254D6E0D0015373E /* Grecha */;
-			targetProxy = CE5B830A254D6E100015373E /* PBXContainerItemProxy */;
-		};
-		CE5B8316254D6E100015373E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE5B82F2254D6E0D0015373E /* Grecha */;
-			targetProxy = CE5B8315254D6E100015373E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE5B82FC254D6E0D0015373E /* Main.storyboard */ = {
@@ -467,86 +325,6 @@
 			};
 			name = Release;
 		};
-		CE5B8321254D6E100015373E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GrechaTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.grecha.GrechaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grecha.app/Grecha";
-			};
-			name = Debug;
-		};
-		CE5B8322254D6E100015373E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GrechaTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.grecha.GrechaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grecha.app/Grecha";
-			};
-			name = Release;
-		};
-		CE5B8324254D6E100015373E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GrechaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.grecha.GrechaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Grecha;
-			};
-			name = Debug;
-		};
-		CE5B8325254D6E100015373E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GrechaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.grecha.GrechaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Grecha;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,25 +346,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE5B8320254D6E100015373E /* Build configuration list for PBXNativeTarget "GrechaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE5B8321254D6E100015373E /* Debug */,
-				CE5B8322254D6E100015373E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE5B8323254D6E100015373E /* Build configuration list for PBXNativeTarget "GrechaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE5B8324254D6E100015373E /* Debug */,
-				CE5B8325254D6E100015373E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drinkius/TeleTools.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE5B832E254D76300015373E /* TeleTools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */;
+			productName = TeleTools;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE5B82EB254D6E0D0015373E /* Project object */;
 }

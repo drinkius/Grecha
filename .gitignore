@@ -1,0 +1,8 @@
+Pods
+build
+DerivedData
+xcuserdata
+Gemfile.lock
+**/fastlane/report.xml
+**/fastlane/README.md
+*.xliff
