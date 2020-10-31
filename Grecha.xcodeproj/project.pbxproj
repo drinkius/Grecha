@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE54096D254E174900A84598 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE54096C254E174900A84598 /* SwiftyJSON */; };
+		CE54097A254E1B3200A84598 /* RequestManager+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE540978254E1B3200A84598 /* RequestManager+Requests.swift */; };
+		CE54097B254E1B3200A84598 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE540979254E1B3200A84598 /* RequestManager.swift */; };
+		CE540984254E1CA600A84598 /* RequestManager+ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE540983254E1CA600A84598 /* RequestManager+ResponseHandler.swift */; };
+		CE540987254E1CBA00A84598 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE540986254E1CBA00A84598 /* Just.swift */; };
 		CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F6254D6E0D0015373E /* AppDelegate.swift */; };
 		CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */; };
 		CE5B82FB254D6E0D0015373E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82FA254D6E0D0015373E /* ViewController.swift */; };
@@ -17,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE540970254E176B00A84598 /* SwipeSelectingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeSelectingCollectionView.swift; sourceTree = "<group>"; };
+		CE540971254E176B00A84598 /* SwipeSelectingGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeSelectingGestureRecognizer.swift; sourceTree = "<group>"; };
+		CE540978254E1B3200A84598 /* RequestManager+Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Requests.swift"; sourceTree = "<group>"; };
+		CE540979254E1B3200A84598 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		CE540983254E1CA600A84598 /* RequestManager+ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+ResponseHandler.swift"; sourceTree = "<group>"; };
+		CE540986254E1CBA00A84598 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		CE5B82F3254D6E0D0015373E /* Grecha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grecha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5B82F6254D6E0D0015373E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54096D254E174900A84598 /* SwiftyJSON in Frameworks */,
 				CE5B832F254D76300015373E /* TeleTools in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +51,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE54096F254E176B00A84598 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				CE540972254E177500A84598 /* SwipeSelect */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		CE540972254E177500A84598 /* SwipeSelect */ = {
+			isa = PBXGroup;
+			children = (
+				CE540970254E176B00A84598 /* SwipeSelectingCollectionView.swift */,
+				CE540971254E176B00A84598 /* SwipeSelectingGestureRecognizer.swift */,
+			);
+			path = SwipeSelect;
+			sourceTree = "<group>";
+		};
+		CE540976254E1B1500A84598 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CE540979254E1B3200A84598 /* RequestManager.swift */,
+				CE540978254E1B3200A84598 /* RequestManager+Requests.swift */,
+				CE540983254E1CA600A84598 /* RequestManager+ResponseHandler.swift */,
+				CE540986254E1CBA00A84598 /* Just.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		CE5B82EA254D6E0D0015373E = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +101,8 @@
 				CE5B82F6254D6E0D0015373E /* AppDelegate.swift */,
 				CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */,
 				CE5B82FA254D6E0D0015373E /* ViewController.swift */,
+				CE540976254E1B1500A84598 /* Requests */,
+				CE54096F254E176B00A84598 /* Dependencies */,
 				CE5B82FC254D6E0D0015373E /* Main.storyboard */,
 				CE5B82FF254D6E100015373E /* Assets.xcassets */,
 				CE5B8301254D6E100015373E /* LaunchScreen.storyboard */,
@@ -87,6 +129,7 @@
 			name = Grecha;
 			packageProductDependencies = (
 				CE5B832E254D76300015373E /* TeleTools */,
+				CE54096C254E174900A84598 /* SwiftyJSON */,
 			);
 			productName = Grecha;
 			productReference = CE5B82F3254D6E0D0015373E /* Grecha.app */;
@@ -117,6 +160,7 @@
 			mainGroup = CE5B82EA254D6E0D0015373E;
 			packageReferences = (
 				CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */,
+				CE54096B254E174900A84598 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = CE5B82F4254D6E0D0015373E /* Products */;
 			projectDirPath = "";
@@ -145,9 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE540987254E1CBA00A84598 /* Just.swift in Sources */,
 				CE5B82FB254D6E0D0015373E /* ViewController.swift in Sources */,
+				CE54097B254E1B3200A84598 /* RequestManager.swift in Sources */,
+				CE54097A254E1B3200A84598 /* RequestManager+Requests.swift in Sources */,
 				CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */,
 				CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */,
+				CE540984254E1CA600A84598 /* RequestManager+ResponseHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +401,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE54096B254E174900A84598 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/drinkius/TeleTools.git";
@@ -364,6 +420,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE54096C254E174900A84598 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE54096B254E174900A84598 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		CE5B832E254D76300015373E /* TeleTools */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE5B832D254D76300015373E /* XCRemoteSwiftPackageReference "TeleTools" */;
