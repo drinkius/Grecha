@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="wF0-nC-tCP">
             <objects>
-                <viewController id="1JP-sE-nat" sceneMemberID="viewController">
+                <viewController id="1JP-sE-nat" customClass="KDFViewController" customModule="Grecha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RqL-8A-NCn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="oL7-Aj-5D6" kind="relationship" relationship="viewControllers" id="81u-3q-b00"/>
-                        <segue destination="KE6-c0-Uwd" kind="relationship" relationship="viewControllers" id="SGe-qM-ulX"/>
                         <segue destination="Uit-sb-WRk" kind="relationship" relationship="viewControllers" id="WPq-mN-P3q"/>
                     </connections>
                 </tabBarController>
@@ -96,11 +95,11 @@
             </objects>
             <point key="canvasLocation" x="-1336" y="-543"/>
         </scene>
-        <!--КДЦ-->
+        <!--КДФ-->
         <scene sceneID="jGY-pk-Eik">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uit-sb-WRk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="КДЦ" image="kdc" selectedImage="kdc" id="hAY-g8-sWa">
+                    <tabBarItem key="tabBarItem" title="КДФ" image="kdc" selectedImage="kdc" id="hAY-g8-sWa">
                         <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                     </tabBarItem>
                     <toolbarItems/>

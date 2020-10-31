@@ -13,6 +13,8 @@ import SystemConfiguration
 private struct Links {
     static let books = "http://35.198.119.173:8000/books/12345"
     static let recs = "http://35.198.119.173:8000/recs/269"
+    static let listKDFs = "http://35.198.119.173:8000/get_all_kdf"
+    static let kdfRecs = "http://35.198.119.173:8000/recs_kdf/103695"
 }
 
 enum RequestType {
@@ -20,12 +22,17 @@ enum RequestType {
     typealias Interval = Int
 
     case getBooks
+    case getAllKDFs
+    case getKDFRecs
 
     func path() -> String {
-//        let base = RequestManager.restUrl
         switch self {
         case .getBooks:
             return Links.books
+        case .getAllKDFs:
+            return Links.listKDFs
+        case .getKDFRecs:
+            return Links.kdfRecs
         }
     }
 }
