@@ -33,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupUI() {
-        UITabBar.appearance().tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        UITabBar.appearance().tintColor = Theme.megaColor
     }
+}
+
+enum Theme {
+    static let megaColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
 }

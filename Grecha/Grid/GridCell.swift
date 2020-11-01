@@ -12,7 +12,7 @@ class GridCell: UICollectionViewCell {
 
     private enum Attributes {
         static let spacing: CGFloat = 12
-        static let titleFont = UIFont.systemFont(ofSize: 18)
+        static let titleFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
         static var title: [NSAttributedString.Key: Any] {
             return [.font: titleFont,
                     .foregroundColor: UIColor.black]
@@ -41,6 +41,9 @@ class GridCell: UICollectionViewCell {
     }
 
     private func setup() {
+        layer.cornerRadius = 5
+        layer.borderColor = Theme.megaColor.withAlphaComponent(0.2).cgColor
+        layer.borderWidth = 2
         titleLabel.add(to: self).do {
             $0.edgesToSuperview(insets: UIEdgeInsets(value: 10))
             $0.numberOfLines = 0
@@ -54,7 +57,7 @@ class GridCell: UICollectionViewCell {
     
     func setSelected(_ selected: Bool) {
         if selected {
-            backgroundColor = .lightGray
+            backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         } else {
             backgroundColor = .none
         }

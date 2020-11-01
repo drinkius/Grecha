@@ -27,6 +27,8 @@ class GridCollection: UIView {
     
     private let title: String
     private let subtitle: String
+    private let allowsSelection: Bool
+//    private var selectedItems = Set<Int>()
     
     private lazy var collectionView: UICollectionView = {
         return  UICollectionView(frame: .zero, collectionViewLayout: flowLayout).then {
@@ -40,7 +42,9 @@ class GridCollection: UIView {
                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                         withReuseIdentifier: "header")
             
-            $0.allowsMultipleSelection = true
+            
+            $0.allowsSelection = allowsSelection
+            $0.allowsMultipleSelection = allowsSelection
         }
     }()
     
@@ -53,9 +57,10 @@ class GridCollection: UIView {
         }
     }()
     
-    init(title: String, subtitle: String) {
+    init(title: String, subtitle: String, allowsSelection: Bool = true) {
         self.title = title
         self.subtitle = subtitle
+        self.allowsSelection = allowsSelection
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -77,9 +82,21 @@ class GridCollection: UIView {
         }
     }
     
+    func deselectAll() {
+        let selectedItems = collectionView.indexPathsForSelectedItems ?? []
+        for indexPath in selectedItems {
+            collectionView.deselectItem(at: indexPath, animated:true)
+            if let cell = collectionView.cellForItem(at: indexPath) as? GridCell {
+                cell.setSelected(false)
+            }
+        }
+    }
+    
     func selectedIDs() -> [Int] {
         let selected: [GridCellElement] = (collectionView.indexPathsForSelectedItems ?? []).map { return items[$0.item] }
-        return selected.map { $0.idForRequest }
+        let ids = selected.map { $0.idForRequest }
+        print(ids)
+        return ids
     }
 }
 
@@ -121,12 +138,14 @@ extension GridCollection: UICollectionViewDelegateFlowLayout {
     /// - Tag: selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? GridCell {
+//            selectedItems.insert(items[indexPath.item].idForRequest)
             cell.setSelected(true)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? GridCell {
+//            selectedItems.remove(items[indexPath.item].idForRequest)
             cell.setSelected(false)
         }
     }
