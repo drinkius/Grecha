@@ -77,8 +77,9 @@ class GridCollection: UIView {
         }
     }
     
-    func selectedIDs() -> {
-        
+    func selectedIDs() -> [Int] {
+        let selected: [GridCellElement] = (collectionView.indexPathsForSelectedItems ?? []).map { return items[$0.item] }
+        return selected.map { $0.idForRequest }
     }
 }
 

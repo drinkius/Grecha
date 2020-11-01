@@ -11,6 +11,14 @@ class KDFViewController: UIViewController {
     
     let grid = GridCollection(title: "Выберите КДФ интересные вам",
                               subtitle: "Можно выбрать несколько элементов")
+    
+    lazy var button: UIButton = {
+        let button = UIButton(frame: .zero).then {
+            $0.layer.cornerRadius = 40
+            $0.backgroundColor = .blue
+        }
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +28,20 @@ class KDFViewController: UIViewController {
             $0.edgesToSuperview()
         }
         
+        button.add(to: grid).do {
+            $0.width(80)
+            $0.height(80)
+            $0.trailingToSuperview(offset: 30)
+            $0.bottomToSuperview(offset: -120)
+            $0.addTarget(self, action: #selector(getRecsTap), for: .touchUpInside)
+        }
+        
         fetchData()
+    }
+    
+    @objc
+    func getRecsTap() {
+        print("recs")
     }
     
     private func fetchData() {
