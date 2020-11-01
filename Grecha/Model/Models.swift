@@ -54,6 +54,10 @@ extension Book: GridCellElement {
     var cellSubtitle: String? {
         return author
     }
+    
+    var idForRequest: Int {
+        return recordId
+    }
 }
 
 class KDF {
@@ -92,5 +96,9 @@ extension KDF: GridCellElement {
     
     var cellSubtitle: String? {
         return nil
+    }
+    
+    var idForRequest: Int {
+        return id
     }
 }

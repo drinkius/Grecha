@@ -12,7 +12,7 @@ class GridCell: UICollectionViewCell {
 
     private enum Attributes {
         static let spacing: CGFloat = 12
-        static let titleFont = UIFont.systemFont(ofSize: 14)
+        static let titleFont = UIFont.systemFont(ofSize: 18)
         static var title: [NSAttributedString.Key: Any] {
             return [.font: titleFont,
                     .foregroundColor: UIColor.black]
@@ -41,20 +41,23 @@ class GridCell: UICollectionViewCell {
     }
 
     private func setup() {
-        titleLabel.do {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
-            NSLayoutConstraint.activate([
-                $0.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor),
-                $0.topAnchor.constraint(equalTo: self.bottomAnchor),
-                $0.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-                $0.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor),
-            ])
+        titleLabel.add(to: self).do {
+            $0.edgesToSuperview(insets: UIEdgeInsets(value: 10))
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
         }
     }
 
     func configure(element: GridCellElement) {
         titleLabel.attributedText = NSAttributedString(string: element.cellTitle, attributes: Attributes.title)
+    }
+    
+    func setSelected(_ selected: Bool) {
+        if selected {
+            backgroundColor = .lightGray
+        } else {
+            backgroundColor = .none
+        }
     }
 }
 

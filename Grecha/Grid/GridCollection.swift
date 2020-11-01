@@ -10,6 +10,7 @@ import UIKit
 protocol GridCellElement {
     var cellTitle: String { get }
     var cellSubtitle: String? { get }
+    var idForRequest: Int { get }
 }
 
 class GridCollection: UIView {
@@ -20,7 +21,7 @@ class GridCollection: UIView {
         static let leftRightInsets: CGFloat = 18
         static let cellWidth: CGFloat = {
             let screenWidth = UIScreen.main.bounds.width
-            return (screenWidth - 2 * leftRightInsets - 3 * interItemSpacing) / 4
+            return (screenWidth - 2 * leftRightInsets - interItemSpacing) / 2
         }()
     }
     
@@ -38,6 +39,8 @@ class GridCollection: UIView {
             $0.register(Header.self,
                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                         withReuseIdentifier: "header")
+            
+            $0.allowsMultipleSelection = true
         }
     }()
     
@@ -55,6 +58,10 @@ class GridCollection: UIView {
         self.subtitle = subtitle
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
+        
+        collectionView.add(to: self).do {
+            $0.edgesToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -68,6 +75,10 @@ class GridCollection: UIView {
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
+    }
+    
+    func selectedIDs() -> {
+        
     }
 }
 
@@ -84,7 +95,9 @@ extension GridCollection: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! Header
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: "header",
+                                                                         for: indexPath) as! Header
         return headerView
     }
 }
@@ -102,5 +115,18 @@ extension GridCollection: UICollectionViewDelegateFlowLayout {
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
 
         return CGSize(width: UIScreen.main.bounds.width, height: 40)
+    }
+    
+    /// - Tag: selection
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? GridCell {
+            cell.setSelected(true)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? GridCell {
+            cell.setSelected(false)
+        }
     }
 }

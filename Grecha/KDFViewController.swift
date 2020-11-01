@@ -9,23 +9,22 @@ import UIKit
 
 class KDFViewController: UIViewController {
     
-    let placeholder = UIImageView(image: UIImage(named: ""))
+    let grid = GridCollection(title: "Выберите КДФ интересные вам",
+                              subtitle: "Можно выбрать несколько элементов")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        placeholder.add(to: view).do {
+        grid.add(to: view).do {
             $0.contentMode = .scaleAspectFit
-            $0.edgesToSuperview(insets: UIEdgeInsets(top: 80, left: 40, bottom: 80, right: 40))
+            $0.edgesToSuperview()
         }
         
         fetchData()
     }
     
-    
-    
     private func fetchData() {
-        RequestManager.shared.baseGet(type: .getAllKDFs) { (result, error) in
+        RequestManager.shared.baseGet(type: .getAllKDFs) { [weak self] (result, error) in
             guard error == nil else {
                 dump(error)
                 return
@@ -40,10 +39,11 @@ class KDFViewController: UIViewController {
                 }
             }
             Storage.kdfs = kdfs
+            self?.grid.setItems(kdfs)
             print(kdfs.count)
             print("")
             
-            self.getRecs(for: [])
+//            self?.getRecs(for: [])
         }
     }
     
