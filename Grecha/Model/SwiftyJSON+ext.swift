@@ -18,6 +18,10 @@ extension Array: JSONable where Element: JSONable {
 */
 
 extension JSON {
+    
+    public func toString() -> String {
+        return rawString([.castNilToNSNull: true])!
+    }
 
     public func value<T: JSONable>(for key: String) throws -> T {
         try T(json: self[key])

@@ -29,16 +29,16 @@ extension RequestManager {
 //                 completion: completion)
 //    }
 
-    func getBooks(completion: @escaping RequestCompletion) {
-        let headers: [String: String] = [
-            :
-        ]
-        let parameters: [String: String] = [
-            :
-        ]
-        baseGet(type: .getBooks,
-                params: parameters,
-                headers: headers,
-                completion: completion)
-    }
+//    func getBooks(completion: @escaping RequestCompletion) {
+//        let headers: [String: String] = [
+//            :
+//        ]
+//        let parameters: [String: String] = [
+//            :
+//        ]
+//        baseGet(type: .getBooks,
+//                params: parameters,
+//                headers: headers,
+//                completion: completion)
+//    }
 }

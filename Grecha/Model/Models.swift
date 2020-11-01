@@ -42,11 +42,11 @@ class Book: JSONable {
 
     public func jsonString() -> String {
         let json = JSON(dict())
-        return json.rawString([.castNilToNSNull: true])!
+        return json.toString()
     }
 }
 
-class KDF: JSONable {
+class KDF {
 
     let name: String
     let id: Int
@@ -56,8 +56,8 @@ class KDF: JSONable {
         try self.init(json: json)
     }
     
-    required init(json: JSON) throws {
-        id = try json.value(for: "id")
+    required init(json: JSON, recID: Bool = false) throws {
+        id = try json.value(for: recID ? "rec_id" : "id")
         name = try json.value(for: "name")
     }
     
@@ -71,6 +71,6 @@ class KDF: JSONable {
 
     public func jsonString() -> String {
         let json = JSON(dict())
-        return json.rawString([.castNilToNSNull: true])!
+        return json.toString()
     }
 }

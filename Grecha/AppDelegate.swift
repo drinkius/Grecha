@@ -7,6 +7,7 @@
 
 import UIKit
 @_exported import TeleTools
+@_exported import SwiftyJSON
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

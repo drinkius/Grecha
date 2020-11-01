@@ -11,10 +11,10 @@ import SwiftyJSON
 import SystemConfiguration
 
 private struct Links {
-    static let books = "http://35.198.119.173:8000/books/12345"
-    static let recs = "http://35.198.119.173:8000/recs/269"
+    static let books = "http://35.198.119.173:8000/books"
+//    static let recs = "http://35.198.119.173:8000/recs/269"
     static let listKDFs = "http://35.198.119.173:8000/get_all_kdf"
-    static let kdfRecs = "http://35.198.119.173:8000/recs_kdf/103695"
+    static let kdfRecs = "http://35.198.119.173:8000/build_kdf"
 }
 
 enum RequestType {
@@ -77,7 +77,7 @@ class RequestManager: NSObject {
 
     fileprivate func _authPostHeader() -> [String : String] {
         var header = _preAuthPostHeader()
-        header["Authorization"] = "Bearer \(token)"
+//        header["Authorization"] = "Bearer \(token)"
         return header
     }
 
@@ -117,10 +117,11 @@ class RequestManager: NSObject {
             Just.post(url,
                       params: params,
                       headers: header,
-                      requestBody: data) { response in
+                      requestBody: data,
+                      asyncCompletionHandler:  { response in
                         if let content = response.content, let code = response.statusCode {
                             print("\nPOST (\(response.ok ? "Success" : "Error"))\n" +
-                                "URL: \(url)\nERROR CODE: \(String(describing: response.statusCode))")
+                                    "URL: \(url)\nERROR CODE: \(String(describing: response.statusCode))")
                             print("Trace ID: \(response.headers["uber-trace-id"] ?? "missing")\n")
                             if !response.ok {
                                 print(JSON(content))
@@ -136,7 +137,7 @@ class RequestManager: NSObject {
                         } else {
                             completion(nil, RequestError.unknownError)
                         }
-            }
+                      })
         }
     }
 
@@ -155,9 +156,10 @@ class RequestManager: NSObject {
         requestQueue.async {
             Just.get(url,
                      params: params,
-                     headers: header) { response in
+                     headers: header,
+                     asyncCompletionHandler:  { response in
                         print("\nGET (\(response.ok ? "Success" : "Error"))\n" +
-                            "URL: \(url)\nERROR CODE: \(String(describing: response.statusCode))")
+                                "URL: \(url)\nERROR CODE: \(String(describing: response.statusCode))")
                         print("Trace ID: \(response.headers["uber-trace-id"] ?? "missing")\n")
                         if let content = response.content, let code =  response.statusCode {
                             self.onDataReceived(data: try? JSON(data: content),
@@ -171,7 +173,7 @@ class RequestManager: NSObject {
                         } else {
                             completion(nil, RequestError.unknownError)
                         }
-            }
+                     })
         }
     }
 
