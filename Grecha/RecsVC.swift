@@ -11,6 +11,7 @@ class RecsVC: UIViewController {
     
     enum Recs {
         case kdfs([Int])
+        case books([Int])
     }
     
     let grid = GridCollection(title: "Выберите КДФ интересные вам",
@@ -22,6 +23,8 @@ class RecsVC: UIViewController {
             switch recs {
             case .kdfs(let list):
                 getRecs(for: list)
+            case .books(let list):
+                getRecs(forBooks: list)
             }
         }
     }
@@ -49,6 +52,30 @@ class RecsVC: UIViewController {
             var kdfs = [KDF]()
             for json in data["kdfs"].arrayValue {
                 if let kdf = try? KDF(json: json, recID: true) {
+                    kdfs.append(kdf)
+                }
+            }
+            self?.grid.setItems(kdfs)
+            print(kdfs.count)
+            print("")
+        }
+    }
+    
+    private func getRecs(forBooks books: [Int]) {
+        let paramsJSON: JSON = JSON(["book_ids": books])
+        RequestManager.shared.basePost(type: .booksRecs,
+                                       bodyJSON: paramsJSON) { [weak self] (result, error) in
+            guard error == nil else {
+                dump(error)
+                return
+            }
+            guard let data = (result?.data as? JSON) else {
+                return
+            }
+            print(data)
+            var kdfs = [Book]()
+            for json in data["books"].arrayValue {
+                if let kdf = try? Book(json: json) {
                     kdfs.append(kdf)
                 }
             }

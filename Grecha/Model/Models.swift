@@ -22,6 +22,7 @@ class Book: JSONable {
     }
 
     required init(json: JSON) throws {
+        print(json)
         recordId = try json.value(for: "record_id")
         author = try json.value(for: "author")
         title = try json.value(for:  "title")

@@ -11,8 +11,8 @@ import SwiftyJSON
 import SystemConfiguration
 
 private struct Links {
-    static let books = "http://35.198.119.173:8000/books"
-//    static let recs = "http://35.198.119.173:8000/recs/269"
+    static let books = "http://35.198.119.173:8000/random_books"
+    static let recs = "http://35.198.119.173:8000/recs"
     static let listKDFs = "http://35.198.119.173:8000/get_all_kdf"
     static let kdfRecs = "http://35.198.119.173:8000/build_kdf"
 }
@@ -24,6 +24,7 @@ enum RequestType {
     case getBooks
     case getAllKDFs
     case getKDFRecs
+    case booksRecs
 
     func path() -> String {
         switch self {
@@ -33,6 +34,8 @@ enum RequestType {
             return Links.listKDFs
         case .getKDFRecs:
             return Links.kdfRecs
+        case .booksRecs:
+            return Links.recs
         }
     }
 }
