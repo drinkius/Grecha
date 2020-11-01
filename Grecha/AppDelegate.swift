@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupUI() {
         UITabBar.appearance().tintColor = Theme.megaColor
+//        UITabBar.appearance().color = [NSForegroundColorAttributeName:UIColor.black]
     }
 }
 

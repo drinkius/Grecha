@@ -33,6 +33,8 @@ class RecsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationController?.navigationBar.tintColor = Theme.megaColor
         
         grid.add(to: view).do {
             $0.contentMode = .scaleAspectFit

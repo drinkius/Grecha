@@ -13,9 +13,14 @@ class GridCell: UICollectionViewCell {
     private enum Attributes {
         static let spacing: CGFloat = 12
         static let titleFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        static let subtitleFont = UIFont.systemFont(ofSize: 14, weight: .light)
         static var title: [NSAttributedString.Key: Any] {
             return [.font: titleFont,
                     .foregroundColor: UIColor.black]
+        }
+        static var subtitle: [NSAttributedString.Key: Any] {
+            return [.font: subtitleFont,
+                    .foregroundColor: UIColor.gray]
         }
     }
 
@@ -24,6 +29,7 @@ class GridCell: UICollectionViewCell {
     }
 
     private let titleLabel = UILabel()
+    private let subtitleLabel = UILabel()
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {
@@ -38,6 +44,7 @@ class GridCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        setSelected(false)
     }
 
     private func setup() {
@@ -45,7 +52,14 @@ class GridCell: UICollectionViewCell {
         layer.borderColor = Theme.megaColor.withAlphaComponent(0.2).cgColor
         layer.borderWidth = 2
         titleLabel.add(to: self).do {
-            $0.edgesToSuperview(insets: UIEdgeInsets(value: 10))
+            $0.edgesToSuperview(excluding: .bottom, insets: UIEdgeInsets(value: 10))
+            $0.numberOfLines = 0
+            $0.textAlignment = .center
+        }
+        subtitleLabel.add(to: self).do {
+            $0.edgesToSuperview(excluding: [.top, .bottom], insets: UIEdgeInsets(value: 10))
+            $0.topToBottom(of: titleLabel, offset: 10)
+            $0.setCompressionResistance(.defaultLow, for: .vertical)
             $0.numberOfLines = 0
             $0.textAlignment = .center
         }
@@ -53,6 +67,11 @@ class GridCell: UICollectionViewCell {
 
     func configure(element: GridCellElement) {
         titleLabel.attributedText = NSAttributedString(string: element.cellTitle, attributes: Attributes.title)
+        titleLabel.sizeToFit()
+        if let subtitle = element.cellSubtitle {
+            subtitleLabel.attributedText = NSAttributedString(string: subtitle, attributes: Attributes.subtitle)
+            subtitleLabel.sizeToFit()
+        }
     }
     
     func setSelected(_ selected: Bool) {

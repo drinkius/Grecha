@@ -53,7 +53,7 @@ extension Book: GridCellElement {
     }
     
     var cellSubtitle: String? {
-        return author
+        return author + " [\(year)]"
     }
     
     var idForRequest: Int {
