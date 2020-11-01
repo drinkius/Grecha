@@ -9,16 +9,22 @@ import UIKit
 
 class RecsVC: UIViewController {
     
+    enum Recs {
+        case kdfs([Int])
+    }
+    
     let grid = GridCollection(title: "Выберите КДФ интересные вам",
                               subtitle: "Можно выбрать несколько элементов")
     
-    lazy var button: UIButton = {
-        let button = UIButton(frame: .zero).then {
-            $0.layer.cornerRadius = 40
-            $0.backgroundColor = .blue
+    var recs: Recs? {
+        didSet {
+            guard let recs = recs else { return }
+            switch recs {
+            case .kdfs(let list):
+                getRecs(for: list)
+            }
         }
-        return button
-    }()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,21 +33,8 @@ class RecsVC: UIViewController {
             $0.contentMode = .scaleAspectFit
             $0.edgesToSuperview()
         }
-        
-        button.add(to: grid).do {
-            $0.width(80)
-            $0.height(80)
-            $0.trailingToSuperview(offset: 30)
-            $0.bottomToSuperview(offset: -120)
-            $0.addTarget(self, action: #selector(getRecsTap), for: .touchUpInside)
-        }
-        
+
         fetchData()
-    }
-    
-    @objc
-    func getRecsTap() {
-        print("recs")
     }
     
     private func fetchData() {
@@ -68,7 +61,7 @@ class RecsVC: UIViewController {
         }
     }
     
-    private func getRecs(for kdfs: [KDF]) {
+    private func getRecs(for kdfs: [Int]) {
         let ids: [Int] = [326, 419, 836]
         let paramsJSON: JSON = JSON(["kdfs": ids])
         RequestManager.shared.basePost(type: .getKDFRecs,

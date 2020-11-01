@@ -42,7 +42,7 @@ class KDFViewController: UIViewController {
     @objc
     func getRecsTap() {
         print("recs")
-        Router.pushRecs(navVC: navigationController)
+        Router.pushRecs(navVC: navigationController, recs: .kdfs(grid.selectedIDs()))
     }
     
     private func fetchData() {
