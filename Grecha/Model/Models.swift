@@ -46,6 +46,16 @@ class Book: JSONable {
     }
 }
 
+extension Book: GridCellElement {
+    var cellTitle: String {
+        return title
+    }
+    
+    var cellSubtitle: String? {
+        return author
+    }
+}
+
 class KDF {
 
     let name: String
@@ -72,5 +82,15 @@ class KDF {
     public func jsonString() -> String {
         let json = JSON(dict())
         return json.toString()
+    }
+}
+
+extension KDF: GridCellElement {
+    var cellTitle: String {
+        return name
+    }
+    
+    var cellSubtitle: String? {
+        return nil
     }
 }

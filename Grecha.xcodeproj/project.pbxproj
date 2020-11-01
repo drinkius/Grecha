@@ -16,6 +16,9 @@
 		CE54098E254E295C00A84598 /* KDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54098D254E295C00A84598 /* KDFViewController.swift */; };
 		CE5409CB254E2B3600A84598 /* SwiftyJSON+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409CA254E2B3600A84598 /* SwiftyJSON+ext.swift */; };
 		CE5409CE254E2DC000A84598 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409CD254E2DC000A84598 /* Storage.swift */; };
+		CE5409D1254E97AD00A84598 /* GridCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D0254E97AD00A84598 /* GridCollection.swift */; };
+		CE5409D6254E986800A84598 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D5254E986800A84598 /* GridCell.swift */; };
+		CE5409D9254E989900A84598 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D8254E989900A84598 /* Header.swift */; };
 		CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F6254D6E0D0015373E /* AppDelegate.swift */; };
 		CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */; };
 		CE5B82FB254D6E0D0015373E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82FA254D6E0D0015373E /* BooksViewController.swift */; };
@@ -36,6 +39,9 @@
 		CE54098D254E295C00A84598 /* KDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDFViewController.swift; sourceTree = "<group>"; };
 		CE5409CA254E2B3600A84598 /* SwiftyJSON+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyJSON+ext.swift"; sourceTree = "<group>"; };
 		CE5409CD254E2DC000A84598 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		CE5409D0254E97AD00A84598 /* GridCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollection.swift; sourceTree = "<group>"; };
+		CE5409D5254E986800A84598 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		CE5409D8254E989900A84598 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		CE5B82F3254D6E0D0015373E /* Grecha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grecha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5B82F6254D6E0D0015373E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CE5409D3254E985A00A84598 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				CE5409D0254E97AD00A84598 /* GridCollection.swift */,
+				CE5409D8254E989900A84598 /* Header.swift */,
+				CE5409D5254E986800A84598 /* GridCell.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
 		CE5B82EA254D6E0D0015373E = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +136,7 @@
 				CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */,
 				CE5B82FA254D6E0D0015373E /* BooksViewController.swift */,
 				CE54098D254E295C00A84598 /* KDFViewController.swift */,
+				CE5409D3254E985A00A84598 /* Grid */,
 				CE5409C8254E2B1A00A84598 /* Model */,
 				CE540976254E1B1500A84598 /* Requests */,
 				CE54096F254E176B00A84598 /* Dependencies */,
@@ -216,8 +233,11 @@
 				CE54097B254E1B3200A84598 /* RequestManager.swift in Sources */,
 				CE54098A254E28B200A84598 /* Models.swift in Sources */,
 				CE54097A254E1B3200A84598 /* RequestManager+Requests.swift in Sources */,
+				CE5409D6254E986800A84598 /* GridCell.swift in Sources */,
 				CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */,
 				CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */,
+				CE5409D9254E989900A84598 /* Header.swift in Sources */,
+				CE5409D1254E97AD00A84598 /* GridCollection.swift in Sources */,
 				CE540984254E1CA600A84598 /* RequestManager+ResponseHandler.swift in Sources */,
 				CE54098E254E295C00A84598 /* KDFViewController.swift in Sources */,
 			);
