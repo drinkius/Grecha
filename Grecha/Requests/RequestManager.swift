@@ -90,6 +90,7 @@ class RequestManager: NSObject {
                   bodyDict: [String: Any]? = nil,
                   auth: Bool = false,
                   completion: @escaping RequestCompletion) {
+        print(bodyJSON)
         let url = type.path()
         var header: [String: String] = [:]
         if auth {

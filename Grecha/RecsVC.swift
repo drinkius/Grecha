@@ -36,8 +36,7 @@ class RecsVC: UIViewController {
     }
     
     private func getRecs(for kdfs: [Int]) {
-        let ids: [Int] = [326, 419, 836]
-        let paramsJSON: JSON = JSON(["kdfs": ids])
+        let paramsJSON: JSON = JSON(["kdfs": kdfs])
         RequestManager.shared.basePost(type: .getKDFRecs,
                                        bodyJSON: paramsJSON) { [weak self] (result, error) in
             guard error == nil else {
