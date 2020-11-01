@@ -57,16 +57,29 @@ class GridCollection: UIView {
         }
     }()
     
-    init(title: String, subtitle: String, allowsSelection: Bool = true) {
+    private var refreshControl: UIRefreshControl!
+    private let onRefreshRequested: () -> Void
+    
+    init(title: String,
+         subtitle: String,
+         allowsSelection: Bool = true,
+         onRefreshRequested: @escaping () -> Void) {
         self.title = title
         self.subtitle = subtitle
         self.allowsSelection = allowsSelection
+        self.onRefreshRequested = onRefreshRequested
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.add(to: self).do {
             $0.edgesToSuperview()
         }
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.onValueChanged.subscribe(with: self) { [weak self] _ in
+            self?.onRefreshRequested()
+        }
+        collectionView.refreshControl = refreshControl
     }
     
     required init?(coder: NSCoder) {
@@ -74,6 +87,10 @@ class GridCollection: UIView {
     }
     
     private var items = [GridCellElement]()
+    
+    func endRefreshing() {
+        DispatchQueue.main.async { [weak self] in self?.refreshControl.endRefreshing() }
+    }
     
     func setItems(_ items: [GridCellElement]) {
         self.items = items

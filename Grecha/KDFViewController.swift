@@ -9,8 +9,12 @@ import UIKit
 
 class KDFViewController: UIViewController {
     
-    let grid = GridCollection(title: "Выберите КДФ интересные вам",
-                              subtitle: "Можно выбрать несколько элементов")
+    private lazy var grid: GridCollection = {
+        GridCollection(title: "Выберите КДФ интересные вам",
+                       subtitle: "Можно выбрать несколько элементов") { [weak self] in
+            self?.fetchData()
+        }
+    }()
     
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero).then {
@@ -74,6 +78,7 @@ class KDFViewController: UIViewController {
     
     private func fetchData() {
         RequestManager.shared.baseGet(type: .getAllKDFs) { [weak self] (result, error) in
+            self?.grid.endRefreshing()
             guard error == nil else {
                 dump(error)
                 return
@@ -90,29 +95,6 @@ class KDFViewController: UIViewController {
             Storage.kdfs = kdfs
             let toShow = Array(kdfs.choose(100))
             self?.grid.setItems(toShow)
-        }
-    }
-    
-    private func getRecs(for kdfs: [KDF]) {
-        let ids: [Int] = [326, 419, 836]
-        let paramsJSON: JSON = JSON(["kdfs": ids])
-        RequestManager.shared.basePost(type: .getKDFRecs,
-                                       bodyJSON: paramsJSON) { (result, error) in
-            guard error == nil else {
-                dump(error)
-                return
-            }
-            guard let data = (result?.data as? JSON) else {
-                return
-            }
-            var kdfs = [KDF]()
-            for json in data["kdfs"].arrayValue {
-                if let kdf = try? KDF(json: json, recID: true) {
-                    kdfs.append(kdf)
-                }
-            }
-            print(kdfs.count)
-            print("")
         }
     }
 }

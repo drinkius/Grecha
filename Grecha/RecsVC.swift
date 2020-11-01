@@ -16,7 +16,8 @@ class RecsVC: UIViewController {
     
     let grid = GridCollection(title: "Выберите КДФ интересные вам",
                               subtitle: "Можно выбрать несколько элементов",
-                              allowsSelection: false)
+                              allowsSelection: false,
+                              onRefreshRequested: {})
     
     var recs: Recs? {
         didSet {

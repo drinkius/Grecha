@@ -9,8 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let grid = GridCollection(title: "Выберите КДФ интересные вам",
-                              subtitle: "Можно выбрать несколько элементов")
+    private lazy var grid: GridCollection = {
+        GridCollection(title: "Выберите КДФ интересные вам",
+                       subtitle: "Можно выбрать несколько элементов") { [weak self] in
+            self?.fetchData()
+        }
+    }()
     
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero).then {
@@ -36,6 +40,10 @@ class ViewController: UIViewController {
         title = "Выберите любимые книги"
         navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: Theme.megaColor]
+        
+        let img = UIImage(named: "gerb")!.withRenderingMode(.alwaysOriginal)
+        let leftBarButtonItem = UIBarButtonItem(image: img, style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = leftBarButtonItem
         
         grid.add(to: view).do {
             $0.contentMode = .scaleAspectFit
@@ -70,6 +78,7 @@ class ViewController: UIViewController {
     
     private func fetchData() {
         RequestManager.shared.baseGet(type: .getBooks) { [weak self] (result, error) in
+            self?.grid.endRefreshing()
             guard error == nil else {
                 dump(error)
                 return
