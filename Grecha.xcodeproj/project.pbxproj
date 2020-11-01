@@ -19,6 +19,8 @@
 		CE5409D1254E97AD00A84598 /* GridCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D0254E97AD00A84598 /* GridCollection.swift */; };
 		CE5409D6254E986800A84598 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D5254E986800A84598 /* GridCell.swift */; };
 		CE5409D9254E989900A84598 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409D8254E989900A84598 /* Header.swift */; };
+		CE5409DD254EABFA00A84598 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409DC254EABFA00A84598 /* Router.swift */; };
+		CE5409E0254EAC5900A84598 /* RecsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5409DF254EAC5900A84598 /* RecsVC.swift */; };
 		CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F6254D6E0D0015373E /* AppDelegate.swift */; };
 		CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */; };
 		CE5B82FB254D6E0D0015373E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B82FA254D6E0D0015373E /* BooksViewController.swift */; };
@@ -42,6 +44,8 @@
 		CE5409D0254E97AD00A84598 /* GridCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollection.swift; sourceTree = "<group>"; };
 		CE5409D5254E986800A84598 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		CE5409D8254E989900A84598 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		CE5409DC254EABFA00A84598 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE5409DF254EAC5900A84598 /* RecsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecsVC.swift; sourceTree = "<group>"; };
 		CE5B82F3254D6E0D0015373E /* Grecha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grecha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5B82F6254D6E0D0015373E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				CE5B82F8254D6E0D0015373E /* SceneDelegate.swift */,
 				CE5B82FA254D6E0D0015373E /* BooksViewController.swift */,
 				CE54098D254E295C00A84598 /* KDFViewController.swift */,
+				CE5409DF254EAC5900A84598 /* RecsVC.swift */,
+				CE5409DC254EABFA00A84598 /* Router.swift */,
 				CE5409D3254E985A00A84598 /* Grid */,
 				CE5409C8254E2B1A00A84598 /* Model */,
 				CE540976254E1B1500A84598 /* Requests */,
@@ -233,11 +239,13 @@
 				CE54097B254E1B3200A84598 /* RequestManager.swift in Sources */,
 				CE54098A254E28B200A84598 /* Models.swift in Sources */,
 				CE54097A254E1B3200A84598 /* RequestManager+Requests.swift in Sources */,
+				CE5409DD254EABFA00A84598 /* Router.swift in Sources */,
 				CE5409D6254E986800A84598 /* GridCell.swift in Sources */,
 				CE5B82F7254D6E0D0015373E /* AppDelegate.swift in Sources */,
 				CE5B82F9254D6E0D0015373E /* SceneDelegate.swift in Sources */,
 				CE5409D9254E989900A84598 /* Header.swift in Sources */,
 				CE5409D1254E97AD00A84598 /* GridCollection.swift in Sources */,
+				CE5409E0254EAC5900A84598 /* RecsVC.swift in Sources */,
 				CE540984254E1CA600A84598 /* RequestManager+ResponseHandler.swift in Sources */,
 				CE54098E254E295C00A84598 /* KDFViewController.swift in Sources */,
 			);

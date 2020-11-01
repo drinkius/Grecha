@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KDFViewController: UIViewController {
+class RecsVC: UIViewController {
     
     let grid = GridCollection(title: "Выберите КДФ интересные вам",
                               subtitle: "Можно выбрать несколько элементов")
@@ -42,7 +42,6 @@ class KDFViewController: UIViewController {
     @objc
     func getRecsTap() {
         print("recs")
-        Router.pushRecs(navVC: navigationController)
     }
     
     private func fetchData() {
